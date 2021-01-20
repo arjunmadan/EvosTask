@@ -1,5 +1,87 @@
 {
   "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
-  "children" : [ ],
+  "children" : [ {
+    "name" : "BeTest",
+    "children" : [ {
+      "name" : "searchCarsByCriteria",
+      "uid" : "8cb126ee6f18d71a",
+      "parentUid" : "9d3468a62e52212df59e03b11992a35a",
+      "status" : "failed",
+      "time" : {
+        "start" : 1611168130030,
+        "stop" : 1611168131473,
+        "duration" : 1443
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "1", "3", "47", "6", "2017", "2017", "2", "1", "1" ]
+    }, {
+      "name" : "searchCarsByCriteria",
+      "uid" : "38db4b9057c62f7c",
+      "parentUid" : "9d3468a62e52212df59e03b11992a35a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1611168131560,
+        "stop" : 1611168131915,
+        "duration" : 355
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "1", "3", "79", "698", "2017", "2017", "1", "1", "1" ]
+    }, {
+      "name" : "searchCarsByCriteria",
+      "uid" : "f4ef59492a1ec086",
+      "parentUid" : "9d3468a62e52212df59e03b11992a35a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1611168131921,
+        "stop" : 1611168132416,
+        "duration" : 495
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "1", "3", "28", "265", "2017", "2017", "1", "1", "1" ]
+    }, {
+      "name" : "searchCarsByCriteria1",
+      "uid" : "6442977e6f7fe0f0",
+      "parentUid" : "9d3468a62e52212df59e03b11992a35a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1611168132421,
+        "stop" : 1611168136254,
+        "duration" : 3833
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "1", "3", "47", "6", "2017", "2017", "2", "1", "1" ]
+    }, {
+      "name" : "searchCarsByCriteria1",
+      "uid" : "be3f6d909655456a",
+      "parentUid" : "9d3468a62e52212df59e03b11992a35a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1611168136283,
+        "stop" : 1611168137146,
+        "duration" : 863
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "1", "3", "79", "698", "2017", "2017", "1", "1", "1" ]
+    }, {
+      "name" : "searchCarsByCriteria1",
+      "uid" : "fdd9c36745d92e2a",
+      "parentUid" : "9d3468a62e52212df59e03b11992a35a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1611168137152,
+        "stop" : 1611168138135,
+        "duration" : 983
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "1", "3", "28", "265", "2017", "2017", "1", "1", "1" ]
+    } ],
+    "uid" : "9d3468a62e52212df59e03b11992a35a"
+  } ],
   "name" : "packages"
 }
