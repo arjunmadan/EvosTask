@@ -1,9 +1,0 @@
-<html>
-Telephone Number: ${fullNumber}<br>
-Date: ${date}<br>
-Old NNID: ${old_nnid}<br>
-New provider NNID: ${new_np_nnid}<br>
-Request id:  ${request_id}<br>
-New provider id: ${pid}<br>
-Transaction Id: ${tid}<br>
-</html>

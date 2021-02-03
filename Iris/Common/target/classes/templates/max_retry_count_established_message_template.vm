@@ -1,7 +1,0 @@
-<html>
-
-Callback API calls for ${apiCallbackType} have failed to ${customerUrl} for Customer ${customerName}, ${accountName}
-.<br>
-Please notify the representatives for that account.<br>
-
-</html>

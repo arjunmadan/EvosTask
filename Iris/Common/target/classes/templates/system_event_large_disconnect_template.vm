@@ -1,8 +1,0 @@
-<html>
-Order id: ${orderId}<br>
-Link: ${uiLinkWithOrderDetail}:%7B%22a%22:${accountId},%22t%22:%22DISCONNECT%22,%22o%22:%22${orderId}%22%7D<br>
-#if(${customerOrderId})
-Customer Order Id: ${customerOrderId}<br>
-#end
-Account: ${companyName} (${accountId})<br>
-</html>

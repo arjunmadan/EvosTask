@@ -1,1 +1,0 @@
-SELECT fullnumber FROM telephonenumber WHERE (tn_status='Available' AND is_tollfree = 1) AND (fullnumber LIKE :tf_wildchar_npas_0 ) LIMIT 100

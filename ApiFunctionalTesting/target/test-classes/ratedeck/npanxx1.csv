@@ -1,6 +1,0 @@
-NPANXX,InterstateRate,IntrastateRate,LocalRate,Effective Date,Comments
-201200,0.001,0.001,0.001,,No Markup
-201202,0.001,,,,Interstate Only
-201203,,0.001,,,Intrastate Only
-201204,,,0.001,,Local Only
-201205,0.001,0.001,0.001,,20% Markup
