@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Admin/Admin.iml" filepath="$PROJECT_DIR$/Admin/Admin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AdminComponents/AdminComponents.iml" filepath="$PROJECT_DIR$/AdminComponents/AdminComponents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ApiFunctionalTesting/ApiFunctionalTesting.iml" filepath="$PROJECT_DIR$/../ApiFunctionalTesting/ApiFunctionalTesting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Audit/Audit.iml" filepath="$PROJECT_DIR$/Audit/Audit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AuditComponents/AuditComponents.iml" filepath="$PROJECT_DIR$/AuditComponents/AuditComponents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Batch/Batch.iml" filepath="$PROJECT_DIR$/Batch/Batch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bootstrapper/Bootstrapper.iml" filepath="$PROJECT_DIR$/Bootstrapper/Bootstrapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CNAM_LIDB/CNAM_LIDB.iml" filepath="$PROJECT_DIR$/CNAM_LIDB/CNAM_LIDB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CnamLidbComponents/CnamLidbComponents.iml" filepath="$PROJECT_DIR$/CnamLidbComponents/CnamLidbComponents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Common/Common.iml" filepath="$PROJECT_DIR$/Common/Common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Csr/Csr.iml" filepath="$PROJECT_DIR$/Csr/Csr.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CsrComponents/CsrComponents.iml" filepath="$PROJECT_DIR$/CsrComponents/CsrComponents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DNS/DNS.iml" filepath="$PROJECT_DIR$/DNS/DNS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Dlda/Dlda.iml" filepath="$PROJECT_DIR$/Dlda/Dlda.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DldaComponents/DldaComponents.iml" filepath="$PROJECT_DIR$/DldaComponents/DldaComponents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/E911/E911.iml" filepath="$PROJECT_DIR$/E911/E911.iml" />
+      <module fileurl="file://$PROJECT_DIR$/E911Components/E911Components.iml" filepath="$PROJECT_DIR$/E911Components/E911Components.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Failover/Failover.iml" filepath="$PROJECT_DIR$/Failover/Failover.iml" />
+      <module fileurl="file://$PROJECT_DIR$/FailoverComponents/FailoverComponents.iml" filepath="$PROJECT_DIR$/FailoverComponents/FailoverComponents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/History/History.iml" filepath="$PROJECT_DIR$/History/History.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HistoryComponents/HistoryComponents.iml" filepath="$PROJECT_DIR$/HistoryComponents/HistoryComponents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Iris.iml" filepath="$PROJECT_DIR$/.idea/Iris.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LNP/LNP.iml" filepath="$PROJECT_DIR$/LNP/LNP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LNPComponents/LNPComponents.iml" filepath="$PROJECT_DIR$/LNPComponents/LNPComponents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LegacyHistory/LegacyHistory.iml" filepath="$PROJECT_DIR$/LegacyHistory/LegacyHistory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LegacyHistoryComponents/LegacyHistoryComponents.iml" filepath="$PROJECT_DIR$/LegacyHistoryComponents/LegacyHistoryComponents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MessageRouting/MessageRouting.iml" filepath="$PROJECT_DIR$/MessageRouting/MessageRouting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MockService/MockService.iml" filepath="$PROJECT_DIR$/MockService/MockService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NetworkComponents/NetworkComponents.iml" filepath="$PROJECT_DIR$/NetworkComponents/NetworkComponents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Neustar/Neustar.iml" filepath="$PROJECT_DIR$/Neustar/Neustar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NeustarComponents/NeustarComponents.iml" filepath="$PROJECT_DIR$/NeustarComponents/NeustarComponents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Notification/Notification.iml" filepath="$PROJECT_DIR$/Notification/Notification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NotificationComponents/NotificationComponents.iml" filepath="$PROJECT_DIR$/NotificationComponents/NotificationComponents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NumberManagement/NumberManagement.iml" filepath="$PROJECT_DIR$/NumberManagement/NumberManagement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NumberManagementComponents/NumberManagementComponents.iml" filepath="$PROJECT_DIR$/NumberManagementComponents/NumberManagementComponents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Reporting/Reporting.iml" filepath="$PROJECT_DIR$/Reporting/Reporting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ReportingComponents/ReportingComponents.iml" filepath="$PROJECT_DIR$/ReportingComponents/ReportingComponents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SBC/SBC.iml" filepath="$PROJECT_DIR$/SBC/SBC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SbcComponents/SbcComponents.iml" filepath="$PROJECT_DIR$/SbcComponents/SbcComponents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SipPeer/SipPeer.iml" filepath="$PROJECT_DIR$/SipPeer/SipPeer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SipPeerComponents/SipPeerComponents.iml" filepath="$PROJECT_DIR$/SipPeerComponents/SipPeerComponents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TermServices/TermServices.iml" filepath="$PROJECT_DIR$/TermServices/TermServices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TermServicesComponents/TermServicesComponents.iml" filepath="$PROJECT_DIR$/TermServicesComponents/TermServicesComponents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../WebPortal/WebPortal.iml" filepath="$PROJECT_DIR$/../WebPortal/WebPortal.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WebService/WebService.iml" filepath="$PROJECT_DIR$/WebService/WebService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WorkerComponents/WorkerComponents.iml" filepath="$PROJECT_DIR$/WorkerComponents/WorkerComponents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/apidocs/apidocs.iml" filepath="$PROJECT_DIR$/apidocs/apidocs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../WebPortal/data/data.iml" filepath="$PROJECT_DIR$/../WebPortal/data/data.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../WebPortal/gwt/gwt.iml" filepath="$PROJECT_DIR$/../WebPortal/gwt/gwt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../operations/operations.iml" filepath="$PROJECT_DIR$/../operations/operations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../WebPortal/services/services.iml" filepath="$PROJECT_DIR$/../WebPortal/services/services.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../WebPortal/web/web.iml" filepath="$PROJECT_DIR$/../WebPortal/web/web.iml" />
+    </modules>
+  </component>
+</project>

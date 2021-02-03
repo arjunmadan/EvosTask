@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="billingDataSource" name="billingDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+    destroy-method="close">
+    <constructor-arg name="configName" value="billingDataSource"/>
+    <property name="driverClass" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
+    <property name="jdbcUrl" value="${datasource.billing.url}"/>
+    <property name="user" value="${datasource.billing.username}"/>
+    <property name="password" value="${datasource.billing.password}"/>
+    <property name="initialPoolSize" value="3"/>
+    <property name="minPoolSize" value="3"/>
+    <property name="maxPoolSize" value="${datasource.billing.connections.max}"/>
+    <property name="idleConnectionTestPeriod" value="${datasource.billing.connections.test.period.sec}"/>
+    <property name="testConnectionOnCheckin" value="true"/>
+    <property name="acquireIncrement" value="1"/>
+    <property name="numHelperThreads" value="12"/>
+    <property name="preferredTestQuery" value="${datasource.billing.preferred.test.query}"/>
+    <property name="maxIdleTimeExcessConnections"
+      value="${datasource.billing.max.idle.time.excess.connections.sec}"/>
+    <property name="unreturnedConnectionTimeout" value="${datasource.billing.unreturned.connection.timeout.sec}"/>
+    <!--  Print stack traces for all connection checkouts. Stack traces will also print when unreturned checked-out Connections timeout -->
+    <property name="debugUnreturnedConnectionStackTraces" value="true"/>
+  </bean>
+
+</beans>

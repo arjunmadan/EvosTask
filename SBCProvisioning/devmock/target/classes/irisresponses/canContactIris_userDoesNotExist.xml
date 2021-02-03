@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<UserResponse>
+    <ResponseStatus>
+        <ErrorCode>12000</ErrorCode>
+        <Description>User 'systemUser' does not exist</Description>
+    </ResponseStatus>
+</UserResponse>

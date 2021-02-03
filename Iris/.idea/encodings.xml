@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/../ApiFunctionalTesting/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../ApiFunctionalTesting/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Admin/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Batch/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CNAM_LIDB/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Csr/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/CsrComponents/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/DNS/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Dlda/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/DldaComponents/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/E911/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/E911/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/E911Components/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Failover/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/FailoverComponents/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/History/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/History/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/HistoryComponents/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LNP/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LNP/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LNPComponents/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LegacyHistory/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LegacyHistory/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/LegacyHistoryComponents/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MessageRouting/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MessageRouting/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MockService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/MockService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/NetworkComponents/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Neustar/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/NeustarComponents/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Notification/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/NotificationComponents/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/NumberManagement/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/NumberManagement/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/NumberManagementComponents/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Reporting/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ReportingComponents/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SBC/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SbcComponents/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SipPeer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SipPeer/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SipPeerComponents/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/TermServices/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/TermServices/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/TermServicesComponents/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebService/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WorkerComponents/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/apidocs/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/apidocs/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../WebPortal/data/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../WebPortal/gwt/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../WebPortal/gwt/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../WebPortal/services/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../WebPortal/web/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

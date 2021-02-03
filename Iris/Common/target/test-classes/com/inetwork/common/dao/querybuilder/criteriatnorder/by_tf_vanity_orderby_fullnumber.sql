@@ -1,0 +1,1 @@
+SELECT fullnumber FROM telephonenumber WHERE (tn_status='Available' AND is_tollfree = 1) AND fullnumber LIKE :tf_vanity ORDER BY fullnumber LIMIT 100

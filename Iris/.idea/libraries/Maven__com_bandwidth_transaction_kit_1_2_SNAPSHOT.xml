@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.bandwidth:transaction-kit:1.2-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/bandwidth/transaction-kit/1.2-SNAPSHOT/transaction-kit-1.2-20180516.145222-1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/bandwidth/transaction-kit/1.2-SNAPSHOT/transaction-kit-1.2-20180516.145222-1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/bandwidth/transaction-kit/1.2-SNAPSHOT/transaction-kit-1.2-20180516.145222-1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

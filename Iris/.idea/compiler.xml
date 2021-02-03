@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="FailoverComponents" />
+        <module name="CnamLidbComponents" />
+        <module name="apidocs" />
+        <module name="data" />
+        <module name="gwt" />
+        <module name="WorkerComponents" />
+        <module name="Dlda" />
+        <module name="DNS" />
+        <module name="SipPeerComponents" />
+        <module name="E911Components" />
+        <module name="History" />
+        <module name="CsrComponents" />
+        <module name="LNP" />
+        <module name="E911" />
+        <module name="MockService" />
+        <module name="SbcComponents" />
+        <module name="TermServicesComponents" />
+        <module name="CNAM_LIDB" />
+        <module name="SipPeer" />
+        <module name="MessageRouting" />
+        <module name="Common" />
+        <module name="Failover" />
+        <module name="NetworkComponents" />
+        <module name="ApiFunctionalTesting" />
+        <module name="WebService" />
+        <module name="NumberManagement" />
+        <module name="Notification" />
+        <module name="NotificationComponents" />
+        <module name="AdminComponents" />
+        <module name="Bootstrapper" />
+        <module name="AuditComponents" />
+        <module name="Batch" />
+        <module name="NumberManagementComponents" />
+        <module name="SBC" />
+        <module name="web" />
+        <module name="LegacyHistory" />
+        <module name="LNPComponents" />
+        <module name="TermServices" />
+        <module name="Csr" />
+        <module name="LegacyHistoryComponents" />
+        <module name="NeustarComponents" />
+        <module name="ReportingComponents" />
+        <module name="services" />
+        <module name="Admin" />
+        <module name="Reporting" />
+        <module name="Audit" />
+        <module name="Neustar" />
+        <module name="DldaComponents" />
+        <module name="HistoryComponents" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Admin" target="1.8" />
+      <module name="AdminComponents" target="1.8" />
+      <module name="apidocs" target="1.8" />
+      <module name="ApiFunctionalTesting" target="1.8" />
+      <module name="Audit" target="1.8" />
+      <module name="AuditComponents" target="1.8" />
+      <module name="Batch" target="1.8" />
+      <module name="Bootstrapper" target="1.8" />
+      <module name="CNAM_LIDB" target="1.8" />
+      <module name="CnamLidbComponents" target="1.8" />
+      <module name="Common" target="1.8" />
+      <module name="Csr" target="1.8" />
+      <module name="CsrComponents" target="1.8" />
+      <module name="data" target="1.8" />
+      <module name="DL_DA" target="1.6" />
+      <module name="Dlda" target="1.8" />
+      <module name="DldaComponents" target="1.8" />
+      <module name="DNS" target="1.8" />
+      <module name="E911" target="1.8" />
+      <module name="E911Components" target="1.8" />
+      <module name="Emergency" target="1.6" />
+      <module name="Failover" target="1.8" />
+      <module name="FailoverComponents" target="1.8" />
+      <module name="gwt" target="1.8" />
+      <module name="History" target="1.8" />
+      <module name="HistoryComponents" target="1.8" />
+      <module name="IntelliRouter" target="1.6" />
+      <module name="Iris" target="1.5" />
+      <module name="LegacyHistory" target="1.8" />
+      <module name="LegacyHistoryComponents" target="1.8" />
+      <module name="LNP" target="1.8" />
+      <module name="LNPComponents" target="1.8" />
+      <module name="MessageRouting" target="1.8" />
+      <module name="MockService" target="1.8" />
+      <module name="NetworkComponents" target="1.8" />
+      <module name="Neustar" target="1.8" />
+      <module name="NeustarComponents" target="1.8" />
+      <module name="Notification" target="1.8" />
+      <module name="NotificationComponents" target="1.8" />
+      <module name="NumberManagement" target="1.8" />
+      <module name="NumberManagementComponents" target="1.8" />
+      <module name="Reporting" target="1.8" />
+      <module name="ReportingComponents" target="1.8" />
+      <module name="SBC" target="1.8" />
+      <module name="SbcComponents" target="1.8" />
+      <module name="services" target="1.8" />
+      <module name="SipPeer" target="1.8" />
+      <module name="SipPeerComponents" target="1.8" />
+      <module name="TermServices" target="1.8" />
+      <module name="TermServicesComponents" target="1.8" />
+      <module name="UpdateDataBase" target="1.6" />
+      <module name="web" target="1.8" />
+      <module name="WebPortal" target="1.8" />
+      <module name="WebService" target="1.8" />
+      <module name="WorkerComponents" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Admin" options="-parameters" />
+      <module name="AdminComponents" options="-parameters" />
+      <module name="ApiFunctionalTesting" options="-parameters" />
+      <module name="Audit" options="-parameters" />
+      <module name="AuditComponents" options="-parameters" />
+      <module name="Batch" options="-parameters" />
+      <module name="Bootstrapper" options="-parameters" />
+      <module name="CNAM_LIDB" options="-parameters" />
+      <module name="CnamLidbComponents" options="-parameters" />
+      <module name="Common" options="-parameters" />
+      <module name="Csr" options="-parameters" />
+      <module name="CsrComponents" options="-parameters" />
+      <module name="DNS" options="-parameters" />
+      <module name="Dlda" options="-parameters" />
+      <module name="DldaComponents" options="-parameters" />
+      <module name="E911" options="-parameters" />
+      <module name="E911Components" options="-parameters" />
+      <module name="Failover" options="-parameters" />
+      <module name="FailoverComponents" options="-parameters" />
+      <module name="History" options="-parameters" />
+      <module name="HistoryComponents" options="-parameters" />
+      <module name="LNP" options="-parameters" />
+      <module name="LNPComponents" options="-parameters" />
+      <module name="LegacyHistory" options="-parameters" />
+      <module name="LegacyHistoryComponents" options="-parameters" />
+      <module name="MessageRouting" options="-parameters" />
+      <module name="MockService" options="-parameters" />
+      <module name="NetworkComponents" options="-parameters" />
+      <module name="Neustar" options="-parameters" />
+      <module name="NeustarComponents" options="-parameters" />
+      <module name="Notification" options="-parameters" />
+      <module name="NotificationComponents" options="-parameters" />
+      <module name="NumberManagement" options="-parameters" />
+      <module name="NumberManagementComponents" options="-parameters" />
+      <module name="Reporting" options="-parameters" />
+      <module name="ReportingComponents" options="-parameters" />
+      <module name="SBC" options="-parameters" />
+      <module name="SbcComponents" options="-parameters" />
+      <module name="SipPeer" options="-parameters" />
+      <module name="SipPeerComponents" options="-parameters" />
+      <module name="TermServices" options="-parameters" />
+      <module name="TermServicesComponents" options="-parameters" />
+      <module name="WebService" options="-parameters" />
+      <module name="WorkerComponents" options="-parameters" />
+      <module name="apidocs" options="-parameters" />
+      <module name="data" options="-parameters" />
+      <module name="gwt" options="-parameters" />
+      <module name="services" options="-parameters" />
+      <module name="web" options="-parameters" />
+    </option>
+  </component>
+</project>

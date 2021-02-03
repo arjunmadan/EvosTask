@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:ldap="http://www.springframework.org/schema/ldap"
+  xmlns:aop="http://www.springframework.org/schema/aop"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/ldap
+      http://www.springframework.org/schema/ldap/spring-ldap.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.1.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+  <aop:config proxy-target-class="true"/>
+
+  <context:component-scan
+    base-package="com.inetwork.common.dao,com.inetwork.iris.functional.*, com.inetwork.test.*, com.inetwork.sbc.dao, com.inetwork.common.togglz, com.inetwork.e911.dao, com.inetwork.network.dao.*">
+    <context:exclude-filter type="regex"
+      expression="com\.inetwork\.common\.dao\.admin\.usermanagement.*"/>
+  </context:component-scan>
+
+  <bean class="com.inetwork.common.config.IrisPropertiesConfiguration"/>
+  <bean class="com.inetwork.common.config.DataSourceConstants"/>
+  <bean class="com.inetwork.common.config.IrisStateRepositoryFactory"/>
+  <!-- Common -->
+  <import resource="test_datasources.xml"/>
+
+  <ldap:context-source id="contextSource"
+    url="${ldap.server.url}"
+    base="${ldap.server.base.dn}"
+    username="${ldap.server.manager.user.dn}"
+    password="${ldap.server.manager.user.password}"/>
+  <ldap:ldap-template id="irisLdapTemplate" context-source-ref="contextSource"/>
+
+  <bean id="propertyProvider"
+    class="com.inetwork.test.configuration.PropertyProvider"/>
+
+  <bean id="pssRestApiConfig"
+    class="com.inetwork.common.pss.pssclient.config.PssRestApiConfigPropsDto">
+    <property name="schema" value="${pss.api.protocol}"/>
+    <property name="host" value="${pss.api.host}"/>
+    <property name="port" value="${pss.api.port}"/>
+    <property name="basePath" value="${pss.registries.api.path}"/>
+  </bean>
+
+  <bean id="regionDao" class="com.inetwork.common.dao.RegionDao">
+    <constructor-arg name="readDataSource" ref="mariaMasterDataSource"/>
+    <constructor-arg name="writeDataSource" ref="mariaMasterDataSource"/>
+  </bean>
+
+  <bean id="emergencyNotificationRecipientDao" class="com.inetwork.common.dao.e911.emergencynotification.EmergencyNotificationRecipientDao">
+    <constructor-arg name="readDataSource" ref="mariaMasterDataSource"/>
+    <constructor-arg name="writeDataSource" ref="mariaMasterDataSource"/>
+  </bean>
+
+  <bean id="textEncryptor" class="com.inetwork.common.util.TextEncryptor">
+  </bean>
+
+  <bean id="MsgProfileIpsDao" class="com.inetwork.nms.provisioning.model.dao.MsgProfileIpsDao">
+    <constructor-arg name="readDataSource" ref="mariaMasterDataSource"/>
+    <constructor-arg name="writeDataSource" ref="mariaMasterDataSource"/>
+  </bean>
+
+  <bean class="com.inetwork.common.util.ApplicationContextProvider"/>
+  <bean class="com.inetwork.common.model.MaintenanceService"/>
+  <bean class="com.inetwork.common.model.lnp.NeustarFocDateService"/>
+  <bean class="com.inetwork.common.orderhistory.config.JsonObjectMapperConfiguration"/>
+  <bean class="com.inetwork.common.util.DateUtility"/>
+  <bean class="com.inetwork.common.util.FocDateUtility"/>
+  <bean class="com.inetwork.common.util.holidays.BlackoutUtility"/>
+  <bean class="com.inetwork.common.model.HolidayService"/>
+  <bean class="com.inetwork.common.model.lnp.BandwidthBusinessTimeBoundsService"/>
+  <bean class="com.inetwork.common.model.lnp.TimeBoundsPropertiesProvider"/>
+  <bean class="com.inetwork.common.model.testing.TestPropertiesService"/>
+  <bean class="com.inetwork.common.model.sms.NnRouteProvider"/>
+  <bean class="com.inetwork.common.model.AccountProductFeatureService"/>
+  <bean class="com.inetwork.common.model.sms.MessagingRoutesService"/>
+  <bean class="com.inetwork.common.dao.admin.usermanagement.domain.DomainDao"/>
+  <bean class="com.inetwork.common.model.SubscriberService"/>
+  <bean class="com.inetwork.common.model.AddressService"/>
+  <bean class="com.inetwork.network.dao.MsgNumberTranslationDao" />
+
+</beans>

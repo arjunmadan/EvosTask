@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EdgeManagementSettingsResponse>
+    <EdgeManagementSettings>
+        <SbcSettings>
+            <TrunkGroupId>MOCK-TRUNK-GROUP-ID</TrunkGroupId>
+            <NodeGroupName>MOCK-NODE-GROUP</NodeGroupName>
+        </SbcSettings>
+    </EdgeManagementSettings>
+</EdgeManagementSettingsResponse>

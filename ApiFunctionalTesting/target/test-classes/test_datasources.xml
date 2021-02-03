@@ -1,0 +1,153 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd
+
+                http://www.springframework.org/schema/context
+                http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+  <context:annotation-config />
+
+
+  <import resource="classpath:iris-web-datasource.xml"/>
+  <import resource="classpath:iris-readslave-datasource.xml"/>
+  <import resource="classpath:network-datasource.xml"/>
+  <import resource="classpath:messaging-datasource.xml"/>
+
+  <bean id="tgaDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+    destroy-method="close">
+    <property name="driverClass"
+      value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
+    <property name="jdbcUrl" value="${datasource.tga.url}"/>
+    <property name="user" value="${datasource.tga.username}"/>
+    <property name="password" value="${datasource.tga.password}"/>
+    <property name="initialPoolSize" value="3"/>
+    <property name="minPoolSize" value="3"/>
+    <property name="maxPoolSize" value="${datasource.tga.connections.max}"/>
+    <property name="idleConnectionTestPeriod"
+      value="${datasource.tga.connections.test.period.sec}"/>
+    <property name="testConnectionOnCheckin" value="true"/>
+    <property name="acquireIncrement" value="1"/>
+    <property name="numHelperThreads" value="12"/>
+  </bean>
+
+  <bean id="billingDataSource" name="billingDataSource"
+    class="com.mchange.v2.c3p0.ComboPooledDataSource"
+    destroy-method="close">
+    <property name="driverClass" value="net.sourceforge.jtds.jdbc.Driver"/>
+    <property name="jdbcUrl" value="${datasource.billing.url}"/>
+    <property name="user" value="${datasource.billing.username}"/>
+    <property name="password" value="${datasource.billing.password}"/>
+    <property name="initialPoolSize" value="3"/>
+    <property name="minPoolSize" value="3"/>
+    <property name="maxPoolSize" value="${datasource.billing.connections.max}"/>
+    <property name="idleConnectionTestPeriod"
+      value="${datasource.billing.connections.test.period.sec}"/>
+    <property name="testConnectionOnCheckin" value="true"/>
+    <property name="acquireIncrement" value="1"/>
+    <property name="numHelperThreads" value="12"/>
+    <property name="preferredTestQuery" value="${datasource.billing.preferred.test.query}"/>
+    <property name="maxIdleTimeExcessConnections"
+      value="${datasource.billing.max.idle.time.excess.connections.sec}"/>
+  </bean>
+
+  <bean id="myBWCDataSource" name="myBWCDataSource"
+    class="com.mchange.v2.c3p0.ComboPooledDataSource"
+    destroy-method="close">
+    <property name="driverClass" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
+    <property name="jdbcUrl" value="${datasource.mybwc.url}"/>
+    <property name="user" value="${datasource.mybwc.username}"/>
+    <property name="password" value="${datasource.mybwc.password}"/>
+    <property name="initialPoolSize" value="3"/>
+    <property name="minPoolSize" value="3"/>
+    <property name="maxPoolSize" value="${datasource.mybwc.connections.max}"/>
+    <property name="idleConnectionTestPeriod"
+      value="${datasource.mybwc.connections.test.period.sec}"/>
+    <property name="testConnectionOnCheckin" value="true"/>
+    <property name="maxIdleTimeExcessConnections" value="300"/>
+  </bean>
+
+  <bean id="NPACDataSource" name="NPACDataSource"
+    class="com.mchange.v2.c3p0.ComboPooledDataSource"
+    destroy-method="close">
+    <property name="driverClass" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
+    <property name="jdbcUrl" value="${datasource.npac.url}"/>
+    <property name="user" value="${datasource.npac.username}"/>
+    <property name="password" value="${datasource.npac.password}"/>
+    <property name="initialPoolSize" value="3"/>
+    <property name="minPoolSize" value="3"/>
+    <property name="maxPoolSize" value="${datasource.npac.connections.max}"/>
+    <property name="idleConnectionTestPeriod"
+      value="${datasource.npac.connections.test.period.sec}"/>
+    <property name="testConnectionOnCheckin" value="true"/>
+    <property name="maxIdleTimeExcessConnections" value="300"/>
+  </bean>
+
+  <bean id="writeOrderHistoryDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+    destroy-method="close">
+    <property name="driverClass" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
+    <property name="jdbcUrl" value="${datasource.orderHistory.url}"/>
+    <property name="user" value="${datasource.orderHistory.username}"/>
+    <property name="password" value="${datasource.orderHistory.password}"/>
+    <property name="initialPoolSize" value="3"/>
+    <property name="minPoolSize" value="3"/>
+    <property name="maxPoolSize" value="${datasource.orderHistory.connections.max}"/>
+    <property name="maxIdleTime" value="3600"/>
+    <property name="maxIdleTimeExcessConnections" value="300"/>
+    <property name="idleConnectionTestPeriod"
+      value="${datasource.orderHistory.connections.test.period.sec}"/>
+    <property name="testConnectionOnCheckin" value="true"/>
+    <property name="acquireIncrement" value="5"/>
+    <property name="numHelperThreads" value="12"/>
+  </bean>
+
+  <bean id="readOrderHistoryDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+    destroy-method="close">
+    <property name="driverClass" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
+    <property name="jdbcUrl" value="${datasource.orderHistory.read.url}"/>
+    <property name="user" value="${datasource.orderHistory.username}"/>
+    <property name="password" value="${datasource.orderHistory.password}"/>
+    <property name="initialPoolSize" value="3"/>
+    <property name="minPoolSize" value="3"/>
+    <property name="maxPoolSize" value="${datasource.orderHistory.connections.max}"/>
+    <property name="maxIdleTime" value="3600"/>
+    <property name="maxIdleTimeExcessConnections" value="300"/>
+    <property name="idleConnectionTestPeriod"
+      value="${datasource.orderHistory.connections.test.period.sec}"/>
+    <property name="testConnectionOnCheckin" value="true"/>
+    <property name="acquireIncrement" value="5"/>
+    <property name="numHelperThreads" value="12"/>
+  </bean>
+  <bean id="orderArchiveDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+    destroy-method="close">
+    <property name="driverClass" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
+    <property name="jdbcUrl" value="${datasource.order.archive.url}"/>
+    <property name="user" value="${datasource.order.archive.username}"/>
+    <property name="password" value="${datasource.order.archive.password}"/>
+    <property name="initialPoolSize" value="3"/>
+    <property name="minPoolSize" value="3"/>
+    <property name="maxPoolSize" value="10"/>
+    <property name="idleConnectionTestPeriod" value="30"/>
+    <property name="testConnectionOnCheckin" value="true"/>
+    <property name="maxIdleTimeExcessConnections" value="300"/>
+  </bean>
+  <bean id="osrDataSource" name="osrDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+    destroy-method="close">
+    <constructor-arg name="configName" value="osrDataSource"/>
+    <property name="driverClass" value="net.sourceforge.jtds.jdbc.Driver"/>
+    <property name="jdbcUrl" value="${datasource.osr.url}"/>
+    <property name="user" value="${datasource.osr.username}"/>
+    <property name="password" value="${datasource.osr.password}"/>
+    <property name="initialPoolSize" value="3"/>
+    <property name="minPoolSize" value="3"/>
+    <property name="maxPoolSize" value="${datasource.osr.connections.max}"/>
+    <property name="idleConnectionTestPeriod" value="${datasource.osr.connections.test.period.sec}"/>
+    <property name="testConnectionOnCheckin" value="true"/>
+    <property name="acquireIncrement" value="1"/>
+    <property name="numHelperThreads" value="12"/>
+  </bean>
+
+
+</beans>

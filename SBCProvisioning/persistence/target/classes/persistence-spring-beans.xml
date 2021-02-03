@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.bandwidth.sbc.persistence"/>
+
+
+    <bean class="org.springframework.orm.jpa.JpaTransactionManager" id="transactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
+    <!-- Spring AOP proxying for Transaction-annotated methods.  Transaction
+         annotations will be ignored on non-public methods and public methods
+         called from other methods that don't have a transaction running
+         -->
+    <tx:annotation-driven transaction-manager="transactionManager" mode="proxy"/>
+
+    <!-- setup for AspectJ handling of Transaction annotations  Requires various AspectJ jar dependencies,
+    META-INF/aop.xml, and adding a spring-agent jar to the JVM runtime using the -javaagent flag .
+    BUT, honors @Transactional on private methods and secondary public methods.
+    -->
+    <!--
+    <tx:annotation-driven transaction-manager="transactionManager" mode="aspectj"/>
+    <context:load-time-weaver/>
+    -->
+
+    <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="entityManagerFactory">
+        <property name="packagesToScan" value="com.bandwidth.sbcprovisioning.common.domain"/>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
+        </property>
+        <property name="jpaPropertyMap">
+            <map>
+                <entry key="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+                <entry key="hibernate.connection.url" value="${datasource.url}"/>
+                <entry key="hibernate.connection.username" value="${datasource.username}"/>
+                <entry key="hibernate.connection.password" value="${datasource.password}"/>
+                <entry key="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+                <entry key="hibernate.default_schema" value="tga"/>
+                <!--<entry key="hibernate.hbm2ddl.auto" value="update"/>-->
+                <!--<entry key="hibernate.show_sql" value="true"/>-->
+
+                <entry key="hibernate.c3p0.min_size" value="5"/>
+                <entry key="hibernate.c3p0.max_size" value="20"/>
+                <entry key="hibernate.c3p0.timeout" value="3000"/>
+            </map>
+        </property>
+    </bean>
+
+</beans>

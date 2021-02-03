@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Template name="Profile Template" version="1">
+    <Entity name="PacketServiceProfile" id="packetServiceProfile" useAllDefaults="false">
+        <Parameter id="name" type="text" displayName="Name" readonly="false" required="true" defaultValue="" description="A unique identifier for the Packet Service Profile."/>
+        <Parameter id="silenceFactor" type="text" displayName="Silence Factor" readonly="false" defaultValue="40" description="The percentage of call time for which silence is expected (Reduces expected call bandwidth)."/>
+        <Parameter id="typeOfService" type="text" displayName="Type of Service" readonly="false" defaultValue="0" description="TOS parameter in IP Header." />
+        <Parameter id="voiceInitialPlayoutBufferDelay" type="text" displayName="Voice Initial Playout Buffer Delay" readonly="false" defaultValue="10" description="A numeric value, in milliseconds (ms), for the voice initial playout buffer delay."/>
+        <Parameter id="peerAbsenceAction" type="select" displayName="Peer Absence Action" readonly="false" description="The action to be taken when the loss of bearer plane connectivity is detected.">
+			 <Options>
+                        <Value default="true" value="none"/>
+                        <Value value="peerAbsenceTrap"/>
+                        <Value value="peerAbsenceTrapAndDisconnect"/>
+			 </Options>        
+        </Parameter>
+        <Parameter name="aal1PayloadSize" type="text" displayName="Aal1 Payload Size" readonly="false" defaultValue="47" description="ATM Adaption Layer Type 1 (AAL-1) payload size" />
+        <Parameter id="preferredRtpPayloadTypeForDtmfRelay" type="text" displayName="Preferred Rtp Payload Type For Dtmf Relay" readonly="false" defaultValue="128" description= "Specifies the preferred RTP Payload Type For DTMF Relay."/>
+        <Parameter id="mediaPacketCos" type="text" displayName="Media Packet Cos" readonly="false" defaultValue="0" description="COS parameter of Ethernet VLAN tag header on Media Packets."/>
+        
+        
+        <Parameter id="honorRemotePrecedence" type="select" displayName="Honor Remote Precendence" readonly="false" description="Specifies whether the audio encoding priority order of the local packetservice profile takes precedence over the remote peer's audio encodingpriority order when creating the priority order of the audio encodingsthat are common to both.">
+ 			 <Options>
+                        <Value default="true" value="disable"/>
+                        <Value value="enable"/>
+			 </Options>        
+        </Parameter>   
+                
+        <Parameter id="sendRoutePSPPrecedence" type="select" displayName="Send Route PSP Precendence" readonly="false" description="Specifies the audio encoding order preference in outgoing messages only..">
+ 			 <Options>
+                        <Value default="true" value="disable"/>
+                        <Value value="enable"/>
+			 </Options>        
+        </Parameter>
+       
+        <Entity name="DataCalls" id="dataCalls" useAllDefaults="false">
+            <Parameter id="preferredRtpDataPayloadType" type="text" displayName="Preferred Rtp Data Payload Type" readonly="false" defaultValue="56" description="This attribute specifies the RTP Payload Type to be included in the RTP header of the data packet."/>
+            <Parameter id="initialPlayoutBufferDelay" type="text" displayName="Initial Playout Buffer Delay" readonly="false" defaultValue="50" description="Used for G.711 only. This attribute defines the size of the initial playout buffer required to absorb the maximum expected data packet delay across the network."/>
+            <Parameter id="packetSize" type="select" displayName="Packet Size" readonly="false" description="This attribute specifies the maximum packet size of the data packet (Kilobits).">
+    			 <Options>
+                        <Value value="10"/>
+                        <Value default="true" value="20"/>
+                        <Value value="30"/>
+                        <Value value="40"/>
+			 </Options>        
+            </Parameter>
+        </Entity>
+        <!-- Data Calls -->
+        <Entity name="Rtcp Options" id="rtcpOptions" useAllDefaults="false">
+            <Parameter id="rtcp" type="select" displayName="Rtcp" readonly="false" description="Specifies whether RTCP is enabled for the channel for reporting traffic congestion data.">
+             			 <Options>
+                        <Value default="true" value="disable"/>
+                        <Value value="enable"/>
+			 </Options>        
+            </Parameter>
+        </Entity>
+        <!-- RTCP Options -->
+        
+        <Entity name="SilenceInsertionDescriptor" id="silenceInsertionDescriptor" useAllDefaults="false">
+            <Parameter id="g711SidRtpPayloadType" type="text" displayName="G711Sid Rtp Payload Type" readonly="false" defaultValue="13" description="G.711 Silence Insertion Descriptor (SID) RTP payloadType"/>
+            <Parameter id="heartBeat" type="select" displayName="Heartbeat" readonly="false" description="Specifies that SID packets are sent within a minimal interval during a silence period and specifies that at least one SID packet will be sent within a SID maximum packet time. ">
+             <Options>
+                        <Value value="disable"/>
+                        <Value default="true"  value="enable"/>
+			 </Options>        
+            </Parameter>
+        </Entity>
+        <!-- SilenceInsertionDescriptor-->
+        
+        
+        <Entity name="Codec" id="codect" useAllDefaults="false">
+            <Parameter id="codecEntry1" type="select" displayName="Codec Entry 1" readonly="false" description="Codec entry with a priority of 1.">
+             <Options>
+                        <Value  default="true"  value="G711-DEFAULT"/>
+                        <Value value="G711SS-DEFAULT"/>
+                        <Value value="G711u_20ms_2833_T38"/>
+                        <Value value="G722"/>
+                        <Value value="G723-DEFAULT"/>
+                        <Value value="G723A-DEFAULT"/>
+                        <Value value="G726-DEFAULT"/>
+                        <Value value="G729A-DEFAULT"/>
+                        <Value value="G729AB-DEFAULT"/>
+                        <Value value="G729A_20MS_2833_T38"/>
+                        <Value value="ILBC_2833"/>
+			 </Options>        
+            </Parameter>
+            
+            <Parameter id="codecEntry2" type="select" displayName="Codec Entry 2" readonly="false" description="Codec entry with a priority of 2.">
+             <Options>
+                        <Value  default="true"  value="G711-DEFAULT"/>
+                        <Value value="G711SS-DEFAULT"/>
+                        <Value value="G711u_20ms_2833_T38"/>
+                        <Value value="G722"/>
+                        <Value value="G723-DEFAULT"/>
+                        <Value value="G723A-DEFAULT"/>
+                        <Value value="G726-DEFAULT"/>
+                        <Value value="G729A-DEFAULT"/>
+                        <Value value="G729AB-DEFAULT"/>
+                        <Value value="G729A_20MS_2833_T38"/>
+                        <Value value="ILBC_2833"/>
+			 </Options>        
+            </Parameter>
+            <Parameter id="codecEntry3" type="select" displayName="Codec Entry 3" readonly="false" description="Codec entry with a priority of 3.">
+             <Options>
+                        <Value  default="true"  value="G711-DEFAULT"/>
+                        <Value value="G711SS-DEFAULT"/>
+                        <Value value="G711u_20ms_2833_T38"/>
+                        <Value value="G722"/>
+                        <Value value="G723-DEFAULT"/>
+                        <Value value="G723A-DEFAULT"/>
+                        <Value value="G726-DEFAULT"/>
+                        <Value value="G729A-DEFAULT"/>
+                        <Value value="G729AB-DEFAULT"/>
+                        <Value value="G729A_20MS_2833_T38"/>
+                        <Value value="ILBC_2833"/>
+			 </Options>        
+            </Parameter>
+            <Parameter id="codecEntry4" type="select" displayName="Codec Entry 4" readonly="false" description="Codec entry with a priority of 4.">
+             <Options>
+                        <Value  default="true"  value="G711-DEFAULT"/>
+                        <Value value="G711SS-DEFAULT"/>
+                        <Value value="G711u_20ms_2833_T38"/>
+                        <Value value="G722"/>
+                        <Value value="G723-DEFAULT"/>
+                        <Value value="G723A-DEFAULT"/>
+                        <Value value="G726-DEFAULT"/>
+                        <Value value="G729A-DEFAULT"/>
+                        <Value value="G729AB-DEFAULT"/>
+                        <Value value="G729A_20MS_2833_T38"/>
+                        <Value value="ILBC_2833"/>
+			 </Options>        
+            </Parameter>
+
+        </Entity>
+        <!-- CODEC -->
+        
+        <Entity name="PacketToPacketControl" id="packetToPacketControl" useAllDefaults="false">
+  
+            <Parameter id="transcode" type="select" displayName="Transcode" readonly="false" description="Transcode">
+              <Options>
+                        <Value  default="true"  value="conditional"/>
+                        <Value value="only"/>
+                        <Value value="determinedByPspForOtherLeg"/>
+                        <Value value="transcoderFreeTransparency"/>
+			 </Options>             
+            </Parameter>
+            
+            <Entity name="ConditionsInAdditionToNoCommonCodec" id="ConditionsInAdditionToNoCommonCodec" useAllDefaults="false">
+                <Parameter id="differentDtmfRelay" type="select" displayName="Different Dtmf Relay" readonly="false"  description="Transcode when the ingress and egress call legs use different DTMF relay methods.">
+					<Options>
+								<Value value="disable"/>
+								<Value default="true"  value="enable"/>
+					 </Options>        
+                </Parameter>
+
+               <Parameter id="differentPacketSize" type="select" displayName="Different Packet Size" readonly="false"  description="Transcode when the ingress and egress call legs use different packet sizes. ">
+					<Options>
+								<Value value="disable"/>
+								<Value default="true"  value="enable"/>
+					 </Options>        
+                </Parameter>
+                
+               <Parameter id="differentSilenceSuppression" type="select" displayName="Different Silence Suppression" readonly="false"  description="Transcode when the ingress and egress call legs use different silence suppression methods.">
+					<Options>
+								<Value value="disable"/>
+								<Value default="true"  value="enable"/>
+					 </Options>        
+                </Parameter>
+                
+               <Parameter id="honorOfferPreference" type="select" displayName="Honor Offer Preference" readonly="false"  description="Select a transcode answer codec, even though it could be passed through, if this allows a more preferred codec to be used on the offer side.">
+					<Options>
+								<Value value="disable"/>
+								<Value default="true"  value="enable"/>
+					 </Options>        
+                </Parameter>
+
+            </Entity>
+            <!-- ConditionsInAdditionToNoCommonCodec -->
+            
+            <Entity name="CodecsAllowedForTranscoding" id="codecsAllowedForTranscoding" useAllDefaults="false">
+				<Parameter id="thisLeg" type="select" displayName="This Leg" readonly="false" description="This Leg BitMask.">
+				 <Options>
+							<Value  default="true"  value="g711a"/>
+							<Value value="g711u"/>
+							<Value value="g7231"/>
+							<Value value="g726"/>
+							<Value value="g729"/>
+							<Value value="t38"/>
+							<Value value="ilbc"/>
+							<Value value="amr"/>
+							<Value value="efr"/>
+							<Value value="evrc"/>
+							<Value value="g722"/>
+							<Value value="g7222"/>
+							<Value value="g7221"/>
+				 </Options>        
+				</Parameter>
+            
+				<Parameter id="otherLeg" type="select" displayName="Other Leg" readonly="false" description="Other Leg BitMask.">
+				 <Options>
+							<Value  default="true"  value="g711a"/>
+							<Value value="g711u"/>
+							<Value value="g7231"/>
+							<Value value="g726"/>
+							<Value value="g729"/>
+							<Value value="t38"/>
+							<Value value="ilbc"/>
+							<Value value="amr"/>
+							<Value value="efr"/>
+							<Value value="evrc"/>
+							<Value value="g722"/>
+							<Value value="g7222"/>
+							<Value value="g7221"/>
+				 </Options>        
+				</Parameter>
+            
+			</Entity>
+            <!-- CodecsAllowedForTranscoding -->
+        </Entity>
+        <!-- PacketToPacketControl -->
+        
+        
+        <Entity name="Flags" id="flags" useAllDefaults="false">
+		   <Parameter id="disallowDataCalls" type="select" displayName="Disallow Data Calls" readonly="false" description="Disallows data calls (restricted or unrestricted digital information)">
+				 <Options>
+							<Value default="true" value="disable"/>
+							<Value value="enable"/>
+				 </Options>        
+			</Parameter>   
+
+		   <Parameter id="digitDetectSendEnabled" type="select" displayName="Digit Detect Send Enabled" readonly="false" description="Enables digit detection on digits sent to the network.">
+				 <Options>
+							<Value default="true" value="disable"/>
+							<Value value="enable"/>
+				 </Options>        
+			</Parameter>   
+		   <Parameter id="useDirectMedia" type="select" displayName="Use Direct Media" readonly="false" description="Enables use of direct media if possible.">
+				 <Options>
+							<Value default="true" value="disable"/>
+							<Value value="enable"/>
+				 </Options>        
+			</Parameter>   
+		   <Parameter id="validatePeerSupportForDtmfEvents" type="select" displayName="Validate Peer Support For Dtmf Event" readonly="false" description="Validates the presence of DTMF events 0-15 in the offer or answer from peers that support RFC 4733. Validate Peer Support For DTMF Events.">
+				 <Options>
+							<Value default="true" value="disable"/>
+							<Value value="enable"/>
+				 </Options>        
+			</Parameter> 
+			  
+		   <Parameter id="interworkDtmfWithoutTranscoding" type="select" displayName="Internetwork Dtmf Without Transcoding" readonly="false" description="Interworking DTMF OOB 2833 Without Transcoding.">
+				 <Options>
+							<Value default="true" value="disable"/>
+							<Value value="enable"/>
+				 </Options>        
+			</Parameter>   
+        
+        </Entity>
+        <!-- Flags -->
+        
+        
+        <Entity name="T38" id="t38" useAllDefaults="false">
+		   <Parameter id="dataRateManagementType" type="select" displayName="Data Rate Management Type" readonly="false" description="Data rate management type for T.38.">
+				 <Options>
+							<Value default="true" value="type1LocalGenerationOfTcf"/>
+							<Value value="type2TransferOfTcf"/>
+				 </Options>        
+			</Parameter>   
+
+		   <Parameter id="lowSpeedNumberOfRdundantPackets" type="select" displayName="Low Speed Number Of Redundant Packets" readonly="false" description="For low-speed fax relay, specifies the number of redundant IFPmessages sent in a UDP for fax transmission. Possible values are 0, 1, and 2.">
+				 <Options>
+							<Value value="0"/>
+							<Value default="true" value="1"/>
+							<Value value="2"/>		
+				 </Options>        
+			</Parameter>   
+			
+		   <Parameter id="maxBitRate" type="select" displayName="Max Bit Rate" readonly="false" description="Maximum bit rate, in kilobits per second (kbps), for T.38.">
+				 <Options>
+							<Value value="2.4Kbits_s"/>
+							<Value value="4.8Kbits_s"/>
+							<Value value="9.6Kbits_s"/>
+							<Value default="true" value="14.4Kbits_s"/>
+			 </Options>        
+			</Parameter>   
+			
+		   <Parameter id="numberOfRedundantPackets" type="select" displayName="Number of Redundant Packets" readonly="false" description="For high-speed fax relay, specifies the number of redundant InternetFacsimile Protocol (IFP) messages sent in a User Datagram Packet(UDP) for fax transmission.">
+				 <Options>
+							<Value value="0"/>
+							<Value default="true" value="1"/>
+							<Value value="2"/>		
+				 </Options>        
+			</Parameter> 
+			  
+		   <Parameter id="interworkDtmfWithoutTranscoding" type="select" displayName="Internetwork Dtmf Without Transcoding" readonly="false" description="Interworking DTMF OOB 2833 Without Transcoding.">
+				 <Options>
+							<Value default="true" value="disable"/>
+							<Value value="enable"/>
+				 </Options>        
+			</Parameter>   
+        
+        </Entity>
+        <!-- Flags -->
+ 
+ 
+        <!-- Empty Parameters for cut and paste
+        <Parameter id="" type="text" displayName="" readonly="true" defaultValue="" description=""  />
+
+        <Parameter id="" type="text" displayName="" readonly="" defaultValue="" description=""  >
+            <Validations>
+                <Validation type="regex" expression="" errorMessage="" />
+                <Validation type="library" name="com.bandwdith.trunkgrouperator.validations.IntegerOnly" />
+                <Validation type="range" low="1" high="1440" />
+                <Validation type="required" />
+            </Validations>
+        </Parameter>
+
+        <Parameter id="" type="select" displayName="" readonly="" defaultValue="" description=""  >
+                    <Options>
+                            <Value default="true" value="v1" />
+                            <Value value="v2" />
+                    </Options>
+        </Parameter>
+    -->
+    </Entity>
+</Template>

@@ -1,0 +1,7 @@
+<html>
+Telephone Number: ${fullNumber}<br>
+Error Message: ${errorMessage}<br>
+Error Code: ${errorCode}<br>
+NNID: ${nnid}<br>
+Account Id: ${accountId}<br>
+</html>

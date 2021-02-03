@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="myBWCDataSource" name="myBWCDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+    destroy-method="close">
+    <constructor-arg name="configName" value="myBWCDataSource-common"/>
+    <property name="driverClass" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
+    <property name="jdbcUrl" value="${datasource.mybwc.url}"/>
+    <property name="user" value="${datasource.mybwc.username}"/>
+    <property name="password" value="${datasource.mybwc.password}"/>
+    <property name="initialPoolSize" value="3"/>
+    <property name="minPoolSize" value="3"/>
+    <property name="maxPoolSize" value="${datasource.mybwc.connections.max}"/>
+    <property name="idleConnectionTestPeriod" value="${datasource.mybwc.connections.test.period.sec}"/>
+    <property name="testConnectionOnCheckin" value="true"/>
+    <property name="acquireIncrement" value="1"/>
+    <property name="numHelperThreads" value="12"/>
+    <property name="maxIdleTimeExcessConnections" value="300"/>
+  </bean>
+
+</beans>

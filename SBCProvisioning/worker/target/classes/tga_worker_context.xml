@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+    <context:annotation-config/>
+    <context:component-scan base-package="com.bandwidth.sbc.worker"/>
+
+    <import resource="classpath:persistence-spring-beans.xml"/>
+    <import resource="classpath:service-spring-beans.xml"/>
+
+    <!-- Hacky just autowiring RabbitMqService, hopefully this can be fixed when
+         we merge with Iris -->
+    <context:component-scan base-package="com.inetwork.common.model" use-default-filters="false">
+        <context:include-filter type="regex" expression="com.inetwork.common.model.RabbitMqService"/>
+    </context:component-scan>
+
+    <bean class="com.bandwidth.sbcprovisioning.common.util.SbcPropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:properties/${SBC_ENVIRONMENT}/${SBC_ENVIRONMENT}.properties</value>
+            </list>
+        </property>
+        <property name="ignoreResourceNotFound" value="false"/>
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+    </bean>
+
+    <bean id="sbcProvisioningRequestHandlerFactory" class="com.bandwidth.sbc.worker.SbcProvisioningRequestHandlerFactory"/>
+    <bean id="sbcProvisioningMessageProcessor" class="com.inetwork.common.model.MessageProcessor">
+        <constructor-arg index="0" ref="sbcProvisioningRequestHandlerFactory"/>
+    </bean>
+
+    <!--Semaphore used to guarantee that only two thread is configuring an SBC at a time.-->
+    <!-- Two workers with two threads each allows 4 simultaneous TG deploys/deletes to the
+         SBC at the same time, and still leaves two sessions open for profile management
+         and other SBC work -->
+    <bean id="sbcProvisioningGate" class="java.util.concurrent.Semaphore">
+        <constructor-arg value="2"/>
+        <constructor-arg value="true"/>
+    </bean>
+
+    <!--Semaphore to guarantee that only one thread on the JVM is doing profile actions on the SBC.-->
+    <bean id="profileProvisioningGate" class="java.util.concurrent.Semaphore">
+        <constructor-arg value="1"/>
+        <constructor-arg value="true"/>
+    </bean>
+
+</beans>

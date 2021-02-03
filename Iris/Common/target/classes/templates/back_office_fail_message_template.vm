@@ -1,0 +1,5 @@
+<html>
+
+${errorsCount} errors have happened in the last ${minutesInterval} minutes for the Port-out Billing Event API endpoint. Please contact Bandwidth Dashboard DevOps staff.<br>
+
+</html>

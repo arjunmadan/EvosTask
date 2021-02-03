@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- This suite could be used for AWS env, as it excludes tests that use mock env  -->
+<suite name="Smoke Testing" configfailurepolicy="continue">
+
+  <test name="All tests">
+    <packages>
+      <package name="com.inetwork.order.*"/>
+      <package name="com.inetwork.portabilitycheck.*"/>
+      <package name="com.inetwork.searchnumbers.*"/>
+    </packages>
+  </test>
+
+</suite>

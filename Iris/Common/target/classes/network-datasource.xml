@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="networkDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+    destroy-method="close">
+    <constructor-arg name="configName" value="networkDataSource"/>
+    <property name="driverClass" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/>
+    <property name="jdbcUrl" value="${datasource.network.url}"/>
+    <property name="user" value="${datasource.network.username}"/>
+    <property name="password" value="${datasource.network.password}"/>
+    <property name="initialPoolSize" value="3"/>
+    <property name="minPoolSize" value="3"/>
+    <property name="maxPoolSize" value="${datasource.network.connections.max}"/>
+    <property name="idleConnectionTestPeriod" value="${datasource.network.connections.test.period.sec}"/>
+    <property name="testConnectionOnCheckin" value="true"/>
+    <property name="acquireIncrement" value="1"/>
+    <property name="numHelperThreads" value="12"/>
+  </bean>
+
+</beans>

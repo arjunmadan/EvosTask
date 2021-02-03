@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="true" scan="true" scanPeriod="60 seconds">
+  <jmxConfigurator/>
+
+  <shutdownHook class="ch.qos.logback.core.hook.DelayingShutdownHook"/>
+
+  <!-- include external logger configuration that can be modified on the fly -->
+  <include optional="true" file="${IRIS_CONFIG_DIRECTORY}/logback-logger-override.xml"/>
+
+  <property file="${IRIS_CONFIG_DIRECTORY}/common.properties"/>
+
+  <!-- configuration stuff that is valid for all environments -->
+  <if condition='isDefined("logDir") &amp;&amp; isDefined("appName")'>
+    <then>
+      <contextName>${appName}</contextName>
+      <appender name="debug-file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>${logDir}/${appName}.debug.log</File>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+          <level>DEBUG</level>
+        </filter>
+        <encoder>
+          <pattern>%d [%t] %-5p %c.%L [%X{traceId} %X{spanId}] - %X{id} - %replace(%replace(%replace(%replace(%m){"Pin>[^\u003C]+","Pin>******"}){"name=data_smsc_password, value=[a-zA-Z0-9]+,","name=data_smsc_password, value=********,"}){"'data_smsc_password','[a-zA-Z0-9]+'","'data_smsc_password','********'"}){"(?i)(INSERT INTO subscriber).+?(\u007B.*)","$1 ... $2"}%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+          <fileNamePattern>${logDir}/old/debug/${appName}.%d{yyyy-MM-dd_HH}.%i.debug.log.gz
+          </fileNamePattern>
+          <maxHistory>168</maxHistory>
+          <maxFileSize>50MB</maxFileSize>
+          <totalSizeCap>5GB</totalSizeCap>
+        </rollingPolicy>
+      </appender>
+
+      <root level="${root.level:-INFO}">
+        <appender-ref ref="debug-file"/>
+      </root>
+    </then>
+    <else>
+      <if condition='"${logback.format}".equals("plaintext")'>
+        <then>
+          <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+              <pattern>%d{HH:mm:ss.SSS} [%t] %-5p \(%F:%L\) [%X{traceId} %X{spanId}] - %X{id} %replace(%replace(%replace(%replace(%m){"Pin>[^\u003C]+","Pin>******"}){"name=data_smsc_password, value=[a-zA-Z0-9]+,","name=data_smsc_password, value=********,"}){"'data_smsc_password','[a-zA-Z0-9]+'","'data_smsc_password','********'"}){"(?i)(INSERT INTO subscriber).+?(\u007B.*)","$1 ... $2"}%n</pattern>
+            </encoder>
+          </appender>
+          <if condition='isDefined("TEST_ENV")'>
+            <then>
+              <root level="${root.level:-DEBUG}">
+                <appender-ref ref="STDOUT"/>
+              </root>
+            </then>
+            <else>
+              <root level="${root.level:-WARN}">
+                <appender-ref ref="STDOUT"/>
+              </root>
+            </else>
+          </if>
+        </then>
+        <else>
+          <appender name="LOGSTASH" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+              <pattern>%d{HH:mm:ss.SSS} [%t] %-5p \(%F:%L\) [%X{traceId} %X{spanId}] - %X{id} %m%n
+              </pattern>
+            </encoder>
+          </appender>
+          <if condition='isDefined("TEST_ENV")'>
+            <then>
+              <root level="${root.level:-DEBUG}">
+                <appender-ref ref="LOGSTASH"/>
+              </root>
+            </then>
+            <else>
+              <root level="${root.level:-WARN}">
+                <appender-ref ref="LOGSTASH"/>
+              </root>
+            </else>
+          </if>
+        </else>
+      </if>
+
+    </else>
+  </if>
+
+  <logger name="com.bandwidth" level="${bandwidth.level:-INFO}"/>
+  <logger name="com.inetwork" level="${inetwork.level:-INFO}"/>
+  <logger name="com.inetwork.common.dao" level="INFO"/>
+  <logger name="com.inetwork.common.termination.utils" level="INFO"/>
+  <logger name="com.inetwork.common.util.NeustarWirelessXmlSerializer" level="INFO"/>
+  <logger name="com.inetwork.common.util.NeustarWirelineXmlSerializer" level="INFO"/>
+  <logger name="com.inetwork.common.util.CustomBeanPropertyRowMapper" level="INFO"/>
+  <logger name="org.springframework.amqp.rabbit.listener.adapter.MessageListenerAdapter"
+    level="INFO"/>
+  <logger name="org.springframework" level="${spring.level:-INFO}"/>
+  <logger name="org.springframework.jdbc.datasource.DataSourceTransactionManager" level="INFO"/>
+  <logger name="org.springframework.aop.framework.CglibAopProxy" level="WARN"/>
+  <logger name="com.mchange.v2" level="INFO"/>
+  <logger name="org.apache.cxf" level="INFO"/>
+  <logger name="org.apache.http" level="INFO"/>
+  <!-- Apache wire log causes performance problems on big files -->
+  <logger name="org.apache.http.wire" level="INFO"/>
+  <logger name="org.apache.velocity" level="INFO"/>
+
+  <!-- log4jdbc sql & jdbc logging -->
+  <logger name="jdbc.sqlonly" level="OFF"/>
+  <logger name="jdbc.sqltiming" level="INFO"/>
+  <logger name="jdbc.audit" level="OFF"/>
+  <logger name="jdbc.resultset" level="OFF"/>
+  <logger name="jdbc.connection" level="OFF"/>
+  <logger name="jdbc.resultsettable" level="OFF"/>
+
+  <logger name="org.apache.kafka" level="WARN"/>
+  <logger name="org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration" level="OFF"/>
+</configuration>

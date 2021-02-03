@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TestNG">
+  <listeners>
+    <listener class-name="com.inetwork.iris.functional.TestNGSupplement.AnnotationTransformer"/>
+    <listener class-name="com.inetwork.iris.functional.ThreadNameChangerMethodListener"/>
+  </listeners>
+
+  <suite-files>
+    <suite-file path="TestNG_2.1.xml"/>
+    <suite-file path="TestNG_2.2.xml"/>
+  </suite-files>
+</suite>

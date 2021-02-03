@@ -1,0 +1,6 @@
+<html>
+
+Tn integrity audit with id=${auditUuid} failed.<br>
+The reason is : '${errorMessage}.'<br>
+
+</html>

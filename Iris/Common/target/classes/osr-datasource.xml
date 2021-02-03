@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="osrDataSource" name="osrDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+  destroy-method="close">
+  <constructor-arg name="configName" value="osrDataSource"/>
+  <property name="driverClass" value="net.sourceforge.jtds.jdbc.Driver"/>
+  <property name="jdbcUrl" value="${datasource.osr.url}"/>
+  <property name="user" value="${datasource.osr.username}"/>
+  <property name="password" value="${datasource.osr.password}"/>
+  <property name="initialPoolSize" value="3"/>
+  <property name="minPoolSize" value="3"/>
+  <property name="maxPoolSize" value="${datasource.osr.connections.max}"/>
+  <property name="idleConnectionTestPeriod" value="${datasource.osr.connections.test.period.sec}"/>
+  <property name="testConnectionOnCheckin" value="true"/>
+  <property name="acquireIncrement" value="1"/>
+  <property name="numHelperThreads" value="12"/>
+</bean>
+
+</beans>

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="MockService:war">
+    <output-path>$PROJECT_DIR$/MockService/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>MockService</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="MockService-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="MockService:war exploded" />
+    </root>
+  </artifact>
+</component>

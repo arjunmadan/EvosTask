@@ -1,0 +1,13 @@
+#set($allLink="Link: ${uiLink}/#orderdetail:%7B%22a%22:${accountId},%22t%22:%22LSR%22,%22o%22:%22${orderId}%22%7D")
+<html>
+Account: ${companyName} (${accountId})<br>
+LSR Id: ${orderId}<br><br>
+Failure Reason:  This order failed because not all numbers have been activated.<br><br>
+List of un-activated numbers: 
+${Formatter.formatToMultilineString(${un_activated_tns})}<br>
+#if(${activated_tns})
+List of activated numbers:
+${Formatter.formatToMultilineString(${activated_tns})}<br>
+#end
+$allLink<br>
+</html>

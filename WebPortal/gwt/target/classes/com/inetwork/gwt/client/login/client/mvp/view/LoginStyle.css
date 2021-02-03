@@ -1,0 +1,52 @@
+.main-content{
+    overflow: visible;
+    background: #FFF;
+    border: 1px solid #D5E5C0;
+    clear: both;
+    width: 320px;
+    margin: 3% auto;
+    padding: 0;
+}
+
+.login-box {
+    margin: 6%;
+}
+
+.login-box button {
+    margin: 12px 0;
+    padding: 5px;
+    font-size: 22px;
+    width: 100%;
+}
+
+.login-box input{
+    border: 1px solid #CCC;
+    font-size: 22px !important;
+    color: #211D1B !important;
+    background: #FFF !important;
+}
+
+.promo-image {
+    max-width: 100%;
+    height: auto !important;
+    margin: auto;
+    display: block;
+}
+
+.help-link {
+    font-size: 10pt;
+}
+
+.box-header {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.form-label {
+    margin: 0.5em 0;
+}
+
+.box-header {
+    font-size: 30px;
+    font-weight: bold;
+}

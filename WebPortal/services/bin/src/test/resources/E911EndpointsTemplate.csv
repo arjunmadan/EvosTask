@@ -1,0 +1,6 @@
+Identifier,CallerName,CallbackNumber,PreferredLanguage,LocationId,HousePrefix,HouseNumber,HouseSuffix,PreDirectional,StreetName,StreetSuffix,PostDirectional,AddressLine2,City,StateCode,Zip,PlusFour
+locationId777,acid test caller name,4082011079,en,,,900,,,MAIN CAMPUS,DR,,,RALEIGH,NC,27606,
+locationId778,acid test caller name,4082011080,en,,,901,,,MAIN CAMPUS,DR,,,RALEIGH,NC,27606,
+locationId779,acid test caller name,4082011081,en,,,901,,,MAIN CAMPUS,DR,,,RALEIGH,NC,27606,
+locationId780,acid test caller name,4082011082,en,addressLocation,,,,,,,,,,,,
+locationId781,acid test caller name,4082011083,en,addressLocation,,,,,,,,,,,,

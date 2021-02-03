@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TestNG" configfailurepolicy="continue" parallel="tests" thread-count="1">
+  <listeners>
+    <!--listener class-name="com.inetwork.iris.functional.TestNGSupplement.AnnotationTransformer"/-->
+    <listener class-name="com.inetwork.iris.functional.ThreadNameChangerMethodListener"/>
+  </listeners>
+
+  <test name="Ordering">
+    <groups>
+      <run>
+        <include name="standard"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.inetwork.iris.functional.ordering.*"/>
+    </packages>
+  </test>
+
+  <test name="Realms">
+    <packages>
+      <package name="com.inetwork.iris.functional.realm.*"/>
+    </packages>
+  </test>
+
+  <test name="SipCredentials">
+    <groups>
+      <run>
+        <include name="standard"/>
+        <include name="auxiliary"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.inetwork.iris.functional.sipcredential.SipCredentialsTest"/>
+    </classes>
+  </test>
+
+  <test name="SipCredential.SipCredentialProvisioning">
+    <groups>
+      <run>
+        <include name="standard"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.inetwork.iris.functional.sipcredential.sipcredentialprovisioning"/>
+    </packages>
+  </test>
+
+  <test name="Sippeer.Cnam.Uc">
+    <groups>
+      <run>
+        <include name="standard"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.inetwork.iris.functional.sippeer.cnam.uc"/>
+    </packages>
+  </test>
+  <test name="Sippeer.Cnam">
+    <groups>
+      <run>
+        <include name="standard"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.inetwork.iris.functional.sippeer.cnam"/>
+    </packages>
+  </test>
+  <test name="Sippeer.Products">
+    <groups>
+      <run>
+        <include name="standard"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.inetwork.iris.functional.sippeer.products"/>
+    </packages>
+  </test>
+  <test name="Sippeer.Termination">
+    <groups>
+      <run>
+        <include name="standard"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.inetwork.iris.functional.sippeer.termination"/>
+    </packages>
+  </test>
+  <test name="Sippeer.UCTrunking">
+    <groups>
+      <run>
+        <include name="standard"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.inetwork.iris.functional.sippeer.uctrunking"/>
+    </packages>
+  </test>
+  <test name="Sippeer">
+    <groups>
+      <run>
+        <include name="standard"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.inetwork.iris.functional.sippeer"/>
+    </packages>
+  </test>
+  <test name="Disconnects">
+    <groups>
+      <run>
+        <include name="standard"/>
+      </run>
+    </groups>
+    <classes>
+      <!-- Tests -->
+      <class name="com.inetwork.iris.functional.disconnects.DisconnectsValidationTest"/>
+      <class name="com.inetwork.iris.functional.disconnects.DisconnectTFTest"/>
+      <class name="com.inetwork.iris.functional.disconnects.DisconnectPortoutPasscodesTest"/>
+      <class
+        name="com.inetwork.iris.functional.disconnects.protectedtns.DisconnectsForProtectedTnsTest"/>
+      <class
+        name="com.inetwork.iris.functional.disconnects.protectedtns.DisconnectsWithProtectedAttributeTest"/>
+    </classes>
+  </test>
+  <test name="City">
+    <packages>
+      <package name="com.inetwork.iris.functional.city"/>
+    </packages>
+  </test>
+  <test name="AddressGeocoding">
+    <packages>
+      <package name="com.inetwork.iris.functional.geocoding"/>
+    </packages>
+  </test>
+  <test name="TerminationProducts">
+    <packages>
+      <package name="com.inetwork.iris.functional.rogertermination"/>
+      <package name="com.inetwork.iris.functional.admin.termination"/>
+    </packages>
+  </test>
+  <test name="OriginationProducts">
+    <packages>
+      <package name="com.inetwork.iris.functional.admin.origination"/>
+    </packages>
+  </test>
+
+  <test name="MsgDbMigration">
+    <packages>
+      <package name="com.inetwork.iris.functional.admin.migrations.dbmigration"/>
+    </packages>
+  </test>
+
+  <test name="Uctrunking">
+    <packages>
+      <package name="com.inetwork.iris.functional.uctrunking"/>
+    </packages>
+  </test>
+
+  <test name="CnamDip">
+    <packages>
+      <package name="com.inetwork.iris.functional.sippeer.cnam"/>
+    </packages>
+  </test>
+  <test name="AdminData">
+    <packages>
+      <package name="com.inetwork.iris.functional.admin.*">
+        <exclude name="com.inetwork.iris.functional.admin.termination"/>
+        <exclude name="com.inetwork.iris.functional.admin.adminsettings"/>
+        <exclude name="com.inetwork.iris.functional.admin.migrations.dbmigration"/>
+      </package>
+      <package name="com.inetwork.iris.functional.systemevents.*"/>
+    </packages>
+    <classes>
+      <class name="com.inetwork.iris.functional.admin.account.AccountApiTest">
+        <methods>
+          <exclude name=".*"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="E911 and E911 pidflo">
+    <packages>
+      <package name="com.inetwork.iris.functional.e911.*"/>
+      <package name="com.inetwork.iris.functional.history.orders.e911.*"/>
+      <package name="com.inetwork.iris.functional.history.globalOrders.e911s.*"/>
+    </packages>
+  </test>
+
+  <test name="LNP with shared global settings ">
+    <packages>
+      <package name="com.inetwork.iris.functional.lnp.portins.manual.*"/>
+      <package name="com.inetwork.iris.functional.lnp.bulkportin.*"/>
+      <package name="com.inetwork.iris.functional.lnp.lnpchecker.*"/>
+      <package name="com.inetwork.iris.functional.lnp.portins"/>
+    </packages>
+  </test>
+
+  <test name="Loa">
+    <packages>
+      <package name="com.inetwork.iris.functional.lnp.loa.*"/>
+    </packages>
+  </test>
+  <test name="Lnp Automated">
+    <packages>
+      <package name="com.inetwork.iris.functional.lnp.portins.automated.*"/>
+    </packages>
+  </test>
+  <test name="Lnp Internal">
+    <packages>
+      <package name="com.inetwork.iris.functional.lnp.portins.internal.*"/>
+    </packages>
+  </test>
+  <test name="Lnp Search">
+    <packages>
+      <package name="com.inetwork.iris.functional.lnp.portins.search.*"/>
+    </packages>
+  </test>
+  <test name="LSR Orders">
+    <packages>
+      <package name="com.inetwork.iris.functional.lnp.lsr.*"/>
+    </packages>
+  </test>
+  <test name="Lnp PortOuts Internal">
+    <packages>
+      <package name="com.inetwork.iris.functional.lnp.portouts.internal.*"/>
+    </packages>
+  </test>
+
+  <test name="Lnp PortOuts Wireless ">
+    <packages>
+      <package name="com.inetwork.iris.functional.lnp.portouts.wireless.*"/>
+    </packages>
+  </test>
+
+  <test name="Lnp PortOuts Wireline">
+    <packages>
+      <package name="com.inetwork.iris.functional.lnp.portouts.wireline.*"/>
+    </packages>
+  </test>
+
+  <test name="Lnp PortOuts Search And Deactivation Tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.lnp.portouts.search.*"/>
+    </packages>
+    <classes>
+      <class name="com.inetwork.iris.functional.lnp.portouts.PortOutDeactivationTest"/>
+    </classes>
+  </test>
+
+  <test name="StoredProcs">
+    <classes>
+      <class name="com.inetwork.iris.functional.storedprocs.CorrelatorStoredProcTest"/>
+    </classes>
+  </test>
+  <test name="virtualInventory numberassigment and reservation tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.virtualinventory.*"/>
+    </packages>
+    <classes>
+      <class name="com.inetwork.iris.functional.reservations.ReservationTest"/>
+    </classes>
+  </test>
+  <test name="DLDA">
+    <packages>
+      <package name="com.inetwork.iris.functional.dlda.*"/>
+    </packages>
+  </test>
+  <test name="TnOption And SipPeerMessaging">
+    <!-- All these tests use the same togglz , need to run them in 1 thread -->
+    <packages>
+      <package name="com.inetwork.iris.functional.tnoptions.a2psettings.*"/>
+    </packages>
+    <classes>
+      <class name="com.inetwork.iris.functional.tnoptions.ValidationTnOptionsTests"/>
+      <class name="com.inetwork.iris.functional.admin.account.AccountApiTest"/>
+      <class name="com.inetwork.iris.functional.sippeer.messaging.SipPeerMmsFeatureTest"/>
+      <class name="com.inetwork.iris.functional.sippeer.messaging.SipPeerSmsFeatureTest"/>
+      <class name="com.inetwork.iris.functional.sippeer.messaging.SipPeerA2pFeaturesTest"/>
+      <class name="com.inetwork.iris.functional.sippeer.messaging.SipPeerNnidTest"/>
+      <!-- Do last because it breaks other tests when messing with togglz (even after reverting the togglz) -->
+      <class name="com.inetwork.iris.functional.sippeer.messaging.SipPeerApplicationTest"/>
+      <class name="com.inetwork.iris.functional.tnhistory.TnDetailsA2pSettingsTest"/>
+    </classes>
+  </test>
+  <test name="TnAssignmentUsageData">
+    <packages>
+      <package name="com.inetwork.iris.functional.analytics.tnassignmentdata"/>
+    </packages>
+  </test>
+  <test name="AgingNumberReclamation">
+    <packages>
+      <package name="com.inetwork.iris.functional.agingreclamation"/>
+    </packages>
+  </test>
+  <test name="Audit">
+    <packages>
+      <package name="com.inetwork.iris.functional.audit"/>
+    </packages>
+  </test>
+
+  <test name="E911AccountProductTest">
+    <packages>
+      <package name="com.inetwork.iris.functional.product.account.e911"/>
+    </packages>
+  </test>
+  <test name="EdgeManagementAccountProductTest">
+    <packages>
+      <package name="com.inetwork.iris.functional.product.account.edgemanagement"/>
+    </packages>
+  </test>
+  <test name="MessagingAccountProductTest">
+    <packages>
+      <package name="com.inetwork.iris.functional.product.account.messaging"/>
+    </packages>
+  </test>
+  <test name="NumberManagamentAccountProductTest">
+    <packages>
+      <package name="com.inetwork.iris.functional.product.account.numbermanagement"/>
+    </packages>
+  </test>
+  <test name="OriginationAccountProductTest">
+    <packages>
+      <package name="com.inetwork.iris.functional.product.account.origination"/>
+    </packages>
+  </test>
+  <test name="TFAccountProductTest">
+    <packages>
+      <package name="com.inetwork.iris.functional.product.account.tollfree"/>
+      <package name="com.inetwork.iris.functional.tollfree"/>
+    </packages>
+  </test>
+  <test name="UCTrunkingAccountProductTest">
+    <packages>
+      <package name="com.inetwork.iris.functional.product.account.uctrunking"/>
+    </packages>
+  </test>
+  <test name="TFTotalsTest">
+    <packages>
+      <package name="com.inetwork.iris.functional.product.tftotals"/>
+    </packages>
+  </test>
+  <test name="TNTotalsTest">
+    <packages>
+      <package name="com.inetwork.iris.functional.product.tntotals"/>
+    </packages>
+  </test>
+  <test name="AccountProductTest">
+    <classes>
+      <class name="com.inetwork.iris.functional.product.ProductApiTest"/>
+    </classes>
+  </test>
+
+  <test name="Applications">
+    <packages>
+      <package name="com.inetwork.iris.functional.application"/>
+    </packages>
+  </test>
+  <test name="LineOptions tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.lineoptions"/>
+    </packages>
+  </test>
+  <test name="CatapultBulkTnsEnableTogglz">
+    <classes>
+      <class name="com.inetwork.iris.functional.catapult.DisconnectForCatapultAccountTest"/>
+      <class name="com.inetwork.iris.functional.catapult.InternalPortOutForCatapultAccountTest"/>
+      <class name="com.inetwork.iris.functional.catapult.LnpAutomatedForCatapultAccountTest"/>
+      <class name="com.inetwork.iris.functional.catapult.DisconnectsTest"/>
+      <class name="com.inetwork.iris.functional.catapult.ExternalTnsOrderForCatapultAccount"/>
+      <class name="com.inetwork.iris.functional.catapult.NewNumberOrderForCatapultAccount"/>
+    </classes>
+  </test>
+  <test name="ExternalTns">
+    <packages>
+      <package name="com.inetwork.iris.functional.externaltns"/>
+    </packages>
+  </test>
+
+  <test name="Site">
+    <packages>
+      <package name="com.inetwork.iris.functional.site"/>
+    </packages>
+  </test>
+  <test name="Togglz">
+    <packages>
+      <package name="com.inetwork.iris.functional.togglz"/>
+    </packages>
+  </test>
+  <test name="Externaltn order tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.history.globalOrders.externaltns.*"/>
+      <package name="com.inetwork.iris.functional.history.orders.externaltns.*"/>
+    </packages>
+  </test>
+
+  <test name="TN option orders ">
+    <packages>
+      <package name="com.inetwork.iris.functional.history.globalOrders.tnoptions.*"/>
+      <package name="com.inetwork.iris.functional.history.orders.tnoptions.*"/>
+    </packages>
+  </test>
+  <test name="Search">
+    <groups>
+      <run>
+        <include name="standard"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.inetwork.iris.functional.search.protectedtnssearch.*"/>
+    </packages>
+    <classes>
+      <!-- Tests -->
+      <class name="com.inetwork.iris.functional.search.CitySearchTest"/>
+      <class name="com.inetwork.iris.functional.search.ZipCodeSearchTest"/>
+      <class name="com.inetwork.iris.functional.search.TollFreeVanitySearchTest"/>
+      <class name="com.inetwork.iris.functional.search.StateSearchTest"/>
+      <class name="com.inetwork.iris.functional.search.NpaNxxSearchTest"/>
+      <class name="com.inetwork.iris.functional.search.AvailableNumbersSearchValidationTest"/>
+      <class name="com.inetwork.iris.functional.search.NpaSearchTest"/>
+      <class name="com.inetwork.iris.functional.search.TollFreeWildCardSearchTest"/>
+      <class name="com.inetwork.iris.functional.search.NpaNxxXSearchTest"/>
+      <class name="com.inetwork.iris.functional.search.LocalVanitySearchTest"/>
+      <class name="com.inetwork.iris.functional.search.LataSearchTest"/>
+      <class name="com.inetwork.iris.functional.search.RateCenterSearchTest"/>
+      <class name="com.inetwork.iris.functional.search.AvailableNpaNxxSearchTest"/>
+    </classes>
+  </test>
+
+  <test name="Search.suggestions">
+    <groups>
+      <run>
+        <include name="standard"/>
+      </run>
+    </groups>
+    <classes>
+
+      <class name="com.inetwork.iris.functional.search.suggestions.SuggestionsTest"/>
+      <class name="com.inetwork.iris.functional.search.suggestions.SuggestionsValidationTest"/>
+    </classes>
+  </test>
+
+  <test name="Netnumber">
+    <packages>
+      <package name="com.inetwork.iris.functional.provisioning.sms.*"/>
+      <package name="com.inetwork.iris.functional.importtnorder"/>
+      <package name="com.inetwork.iris.functional.messaging.netnumber.*"/>
+      <package name="com.inetwork.iris.functional.subscriptions.*"/>
+    </packages>
+    <classes>
+      <!-- Ordering -->
+      <class
+        name="com.inetwork.iris.functional.externaltns.ProvisioningExternalTnsOrderWithMessagingTest"/>
+      <class name="com.inetwork.iris.functional.tnoptions.ProvisioningTnOptionsTest"/>
+      <class name="com.inetwork.iris.functional.history.tns.TnsWithDetailsTest"/>
+      <class name="com.inetwork.iris.functional.history.adminparams.OrderTypeAdminParamsTest"/>
+    </classes>
+  </test>
+
+  <test name="Available tns tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.history.tns.available.*"/>
+    </packages>
+  </test>
+  <test name="Inservice tns tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.history.tns.inservice.*"/>
+      <package name="com.inetwork.iris.functional.history.tns.reports.*"/>
+    </packages>
+  </test>
+  <test name="Disconnected tns tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.history.tns.disconnects.*"/>
+    </packages>
+  </test>
+  <test name="Jasper reports tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.jasper.*"/>
+    </packages>
+  </test>
+  <test name="DTH">
+    <packages>
+      <package name="com.inetwork.iris.functional.dth.*"/>
+    </packages>
+  </test>
+  <test name="Billing report tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.bdr.*"/>
+    </packages>
+  </test>
+  <test name="Ratecenter tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.ratecenter.*"/>
+    </packages>
+  </test>
+  <test name="Order archive tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.orderarchive.*"/>
+    </packages>
+  </test>
+  <test name="Tn history tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.tnhistory.*"/>
+    </packages>
+  </test>
+  <test name="WhiteList">
+    <packages>
+      <package name="com.inetwork.iris.functional.whitelist.*"/>
+    </packages>
+  </test>
+  <test name="Search Host">
+    <packages>
+      <package name="com.inetwork.iris.functional.hostsearch.*"/>
+    </packages>
+  </test>
+  <test name="Rest History">
+    <packages>
+      <package name="com.inetwork.iris.functional.resthistory.*"/>
+    </packages>
+  </test>
+  <test name="Notification tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.notifications.*"/>
+    </packages>
+  </test>
+  <test name="Admin Settings">
+    <packages>
+      <package name="com.inetwork.iris.functional.admin.adminsettings.*"/>
+    </packages>
+  </test>
+  <test name="Global order ">
+    <packages>
+      <package name="com.inetwork.iris.functional.history.globalOrders.orders.*"/>
+    </packages>
+  </test>
+  <test name="Disconnect order tests ">
+    <packages>
+      <package name="com.inetwork.iris.functional.history.orders.disconnect.*"/>
+    </packages>
+  </test>
+  <test name="Import available order tests ">
+    <packages>
+      <package name="com.inetwork.iris.functional.history.orders.importavailable.*"/>
+    </packages>
+  </test>
+  <test name="Import to account order tests ">
+    <packages>
+      <package name="com.inetwork.iris.functional.history.orders.importtoaccount.*"/>
+    </packages>
+  </test>
+  <test name="Lidb order tests ">
+    <packages>
+      <package name="com.inetwork.iris.functional.history.orders.lidb.*"/>
+      <package name="com.inetwork.iris.functional.lidbcnam.*"/>
+      <package name="com.inetwork.iris.functional.history.globalOrders.lidbs.*"/>
+    </packages>
+  </test>
+  <test name="Order response tests ">
+    <packages>
+      <package name="com.inetwork.iris.functional.history.orders.orderresponse.*"/>
+    </packages>
+  </test>
+  <test name="Port out order tests ">
+    <packages>
+      <package name="com.inetwork.iris.functional.history.orders.portout.*"/>
+    </packages>
+  </test>
+  <test name="New number order search tests by site id ">
+    <packages>
+      <package name="com.inetwork.iris.functional.history.orders.site.*"/>
+    </packages>
+  </test>
+  <test name="Old Messaging">
+    <packages>
+      <package name="com.inetwork.iris.functional.messaging.oldmessaging.*"/>
+    </packages>
+  </test>
+
+  <test name="AltSpidLrnUpdate">
+    <packages>
+      <package name="com.inetwork.iris.functional.altspidlrnchange.*"/>
+    </packages>
+  </test>
+  <test name="Usermanagement">
+    <packages>
+      <package name="com.inetwork.iris.functional.usermanagement.*"/>
+    </packages>
+  </test>
+  <test name="Provisioning tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.provisioning.billingscopeprovisioning"/>
+      <package name="com.inetwork.iris.functional.provisioning.edgemanagementprovisioning"/>
+      <package name="com.inetwork.iris.functional.provisioning.e911host"/>
+      <package name="com.inetwork.iris.functional.provisioning.e911provider"/>
+      <package name="com.inetwork.iris.functional.provisioning.reprovisioning"/>
+      <package name="com.inetwork.iris.functional.provisioning.uc"/>
+    </packages>
+  </test>
+  <test name="NumberAssignment">
+    <packages>
+      <package name="com.inetwork.iris.functional.numbersassignment.*"/>
+    </packages>
+  </test>
+  <test name="BackOffice tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.backoffice"/>
+    </packages>
+  </test>
+  <test name="BackOffice locationUpdate tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.backoffice.locationupdate.*"/>
+    </packages>
+  </test>
+  <test name="BackOffice tn history notification tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.backoffice.tnhistorynotification.*"/>
+    </packages>
+  </test>
+
+  <test name="LegacyHistory tns tests">
+    <classes>
+      <class name="com.inetwork.iris.functional.history.tns.TnsHistoryTest"/>
+      <class name="com.inetwork.iris.functional.history.tns.global.GlobalTnsTest"/>
+      <class name="com.inetwork.iris.functional.history.tns.global.GlobalTnsValidationTest"/>
+      <class name="com.inetwork.iris.functional.history.tns.TnsByLcaTest"/>
+      <class name="com.inetwork.iris.functional.history.tns.TnsTest"/>
+      <class name="com.inetwork.iris.functional.history.tns.InserviceDateForTnsLinksTest"/>
+    </classes>
+  </test>
+  <test name="Notes">
+    <packages>
+      <package name="com.inetwork.iris.functional.history.note.*"/>
+    </packages>
+  </test>
+  <test name="Csr Orders">
+    <packages>
+      <package name="com.inetwork.iris.functional.csr.*"/>
+    </packages>
+  </test>
+
+  <test name="Forbidden access tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.forbiddenaccess.*"/>
+    </packages>
+  </test>
+</suite>

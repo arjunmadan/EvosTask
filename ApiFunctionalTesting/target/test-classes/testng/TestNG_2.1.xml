@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TestNG-2" configfailurepolicy="continue" parallel="tests" thread-count="7">
+
+  <listeners>
+    <listener class-name="com.inetwork.iris.functional.TestNGSupplement.AnnotationTransformer"/>
+    <listener class-name="com.inetwork.iris.functional.ThreadNameChangerMethodListener"/>
+  </listeners>
+
+  <test name="MessagingAccountProductTest">
+    <!-- run this package separately from testng.xml tests as it modifies adminData  !-->
+    <packages>
+      <package name="com.inetwork.iris.functional.product.account.messaging"/>
+    </packages>
+  </test>
+
+  <test name="Search">
+    <groups>
+      <run>
+        <include name="standard"/>
+      </run>
+    </groups>
+    <classes>
+      <!-- Tests -->
+      <class name="com.inetwork.iris.functional.search.CitySearchTest"/>
+      <class name="com.inetwork.iris.functional.search.ZipCodeSearchTest"/>
+      <class name="com.inetwork.iris.functional.search.TollFreeVanitySearchTest"/>
+      <class name="com.inetwork.iris.functional.search.StateSearchTest"/>
+      <class name="com.inetwork.iris.functional.search.NpaNxxSearchTest"/>
+      <class name="com.inetwork.iris.functional.search.AvailableNumbersSearchValidationTest"/>
+      <class name="com.inetwork.iris.functional.search.CitySearchTest"/>
+      <class name="com.inetwork.iris.functional.search.NpaSearchTest"/>
+      <class name="com.inetwork.iris.functional.search.TollFreeWildCardSearchTest"/>
+      <class name="com.inetwork.iris.functional.search.NpaNxxXSearchTest"/>
+      <class name="com.inetwork.iris.functional.search.LocalVanitySearchTest"/>
+      <class name="com.inetwork.iris.functional.search.LataSearchTest"/>
+      <class name="com.inetwork.iris.functional.search.RateCenterSearchTest"/>
+    </classes>
+  </test>
+
+  <test name="Search.suggestions">
+    <packages>
+      <package name="com.inetwork.iris.functional.search.suggestions.*"/>
+    </packages>
+  </test>
+
+  <test name="Emergency notification tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.emergencynotification.*"/>
+    </packages>
+  </test>
+
+  <test name="Inservice tns tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.history.tns.inservice.*"/>
+      <package name="com.inetwork.iris.functional.history.tns.reports.*"/>
+    </packages>
+  </test>
+  <test name="Disconnected tns tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.history.tns.disconnects.*"/>
+    </packages>
+  </test>
+  <test name="PortOutPassCode tns tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.history.tns.portoutpasscode.*"/>
+    </packages>
+  </test>
+  <test name="DTH">
+    <packages>
+      <package name="com.inetwork.iris.functional.dth.*"/>
+    </packages>
+  </test>
+  <test name="Billing report tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.bdr.*"/>
+    </packages>
+  </test>
+  <test name="Ratecenter tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.ratecenter.*"/>
+    </packages>
+  </test>
+  <test name="Order archive tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.orderarchive.*"/>
+    </packages>
+  </test>
+  <test name="Tn history tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.tnhistory.*"/>
+    </packages>
+  </test>
+  <test name="WhiteList">
+    <packages>
+      <package name="com.inetwork.iris.functional.whitelist.*"/>
+    </packages>
+  </test>
+  <test name="Search Host">
+    <packages>
+      <package name="com.inetwork.iris.functional.hostsearch.*"/>
+    </packages>
+  </test>
+  <test name="Rest History">
+    <packages>
+      <package name="com.inetwork.iris.functional.resthistory.*"/>
+    </packages>
+  </test>
+
+  <test name="Admin Settings">
+    <packages>
+      <package name="com.inetwork.iris.functional.admin.adminsettings.*"/>
+    </packages>
+  </test>
+
+  <test name="NumberAssignment">
+    <packages>
+      <package name="com.inetwork.iris.functional.numbersassignment.*"/>
+    </packages>
+  </test>
+
+  <test name="ImportTnOrder">
+    <packages>
+      <package name="com.inetwork.iris.functional.importtnorder.*"/>
+    </packages>
+  </test>
+
+  <test name="RemoveImporttnorder">
+    <packages>
+      <package name="com.inetwork.iris.functional.removeimportedtnorder.*"/>
+    </packages>
+  </test>
+
+  <test name="Messaging">
+    <packages>
+      <package name="com.inetwork.iris.functional.messaging.*"/>
+    </packages>
+  </test>
+
+  <test name="Notification tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.notifications.*"/>
+    </packages>
+  </test>
+
+  <test name="Subscriptions">
+    <packages>
+      <package name="com.inetwork.iris.functional.subscriptions.*"/>
+    </packages>
+  </test>
+
+  <test name="Admin Parameters">
+    <packages>
+      <package name="com.inetwork.iris.functional.history.adminparams.*"/>
+    </packages>
+  </test>
+
+  <test name="Csr Orders">
+    <packages>
+      <package name="com.inetwork.iris.functional.csr.*"/>
+    </packages>
+  </test>
+
+  <test name="Forbidden access tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.forbiddenaccess.*"/>
+    </packages>
+  </test>
+
+  <test name="E911 address search tests">
+    <packages>
+      <package name="com.inetwork.iris.functional.e911"/>
+    </packages>
+  </test>
+
+  <test name="E911 orders">
+    <packages>
+      <package name="com.inetwork.iris.functional.e911.orders"/>
+    </packages>
+  </test>
+
+  <test name="E911 ACIDS orders">
+    <packages>
+      <package name="com.inetwork.iris.functional.e911.orders.acids"/>
+    </packages>
+  </test>
+
+  <test name="E911 PIDFLO orders">
+    <packages>
+      <package name="com.inetwork.iris.functional.e911.orders.acids.pidflo.*"/>
+    </packages>
+  </test>
+
+  <test name="Realms">
+    <groups>
+      <run>
+        <include name="auxiliary"/>
+      </run>
+    </groups>
+    <packages>
+      <package name="com.inetwork.iris.functional.realm.*"/>
+    </packages>
+  </test>
+
+</suite>

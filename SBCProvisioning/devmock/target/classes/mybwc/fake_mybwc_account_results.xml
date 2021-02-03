@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <processRequestResponse xmlns="http://www.bandwidth.com/api/">
+      <response xsi:type="getResponse">
+        <requestID>53f9a413-1605-4899-88f0-dbe42f63ca20</requestID>
+        <dateTimeSent>2019-01-23 14:19:32Z</dateTimeSent>
+        <message>Successfully executed getAccountInfo</message>
+        <status>success</status>
+        <errors/>
+        <warnings/>
+        <getRequest>getAccountInfo</getRequest>
+        <accountInfo>
+          <accountInfoEntry>
+            <accountID>a02e91ee-1f1a-11e9-8b1f-8b7ea50e6488</accountID>
+            <accountName>Mock MyBWC Account A</accountName>
+          </accountInfoEntry>
+          <accountInfoEntry>
+            <accountID>b54cf7aa-1f1a-11e9-a508-7b9f2cb41bf2</accountID>
+            <accountName>Mock MyBWC Account B</accountName>
+          </accountInfoEntry>
+          <accountInfoEntry>
+            <accountID>c3364df8-1f1a-11e9-bee8-77437c386280</accountID>
+            <accountName>Mock MyBWC Account C</accountName>
+          </accountInfoEntry>
+        </accountInfo>
+      </response>
+    </processRequestResponse>
+  </soap:Body>
+</soap:Envelope>
