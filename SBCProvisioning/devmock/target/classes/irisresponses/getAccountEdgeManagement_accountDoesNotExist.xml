@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<EdgeManagementSettingsResponse>
-    <ResponseStatus>
-        <ErrorCode>12017</ErrorCode>
-        <Description>Account '9901512' does not have product 'EdgeManagement'</Description>
-    </ResponseStatus>
-</EdgeManagementSettingsResponse>

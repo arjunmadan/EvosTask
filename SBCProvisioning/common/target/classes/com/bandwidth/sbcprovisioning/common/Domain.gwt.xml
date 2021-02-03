@@ -1,8 +1,0 @@
-<module>
-    <inherits name="com.google.gwt.user.User"/>
-    <source path="domain">
-        <exclude name="**/type/**"/>
-        <!--We can't use the PsxManagedEntity entity on the client side, as it contains a Sonus-specific object that we can't translate to javascript.-->
-        <exclude name="PsxManagedEntity.*"/>
-    </source>
-</module>

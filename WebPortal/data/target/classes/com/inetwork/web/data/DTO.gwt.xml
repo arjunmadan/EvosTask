@@ -1,7 +1,0 @@
-<module>
-
-    <inherits name="name.pehl.piriti.xml.XML"/>
-    <inherits name='com.google.gwt.user.User'/>
-
-    <source path="shared"/>
-</module>
